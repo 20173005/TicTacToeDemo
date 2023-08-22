@@ -90,6 +90,10 @@ public class tictactoe
             {
                 hasPlayerWon = true;
             }
+            if(gameBoard[0][2] == 'x' && gameBoard[1][1] == 'x' && gameBoard[2][0] == 'x')
+            {
+                hasPlayerWon = true;
+            }
 
             // AI's Turn
             if(emptySpaceCounter != 1 && !hasPlayerWon)
@@ -112,45 +116,52 @@ public class tictactoe
                 } while(!validInput);
 
                 printBoard(gameBoard);
-            }
 
-            // Checks to see if there is three in a row for ai marker
-            for(int i = 0; i < 3; i++)
-            {
-                if(gameBoard[i][0] == 'o' && gameBoard[i][1] == 'o' && gameBoard[i][2] == 'o')
+                // Checks to see if there is three in a row for ai marker
+                for(int i = 0; i < 3; i++)
                 {
-                    hasAIWon = true;
-                }
-            }
-            for(int j = 0; j < 3; j++)
-            {
-                if(gameBoard[0][j] == 'o' && gameBoard[1][j] == 'o' && gameBoard[2][j] == 'o')
-                {
-                    hasAIWon = true;
-                }
-            }
-            if(gameBoard[0][0] == 'o' && gameBoard[1][1] == 'o' && gameBoard[2][2] == 'o')
-            {
-                hasAIWon = true;
-            }
-
-            // Counts empty spaces and determines if its a draw
-            emptySpaceCounter = 0;
-            for(int i = 0; i < 3; i++)
-            {
-                for(int j = 0; j < 3; j++)
-                {
-                    if(gameBoard[i][j] == '-')
+                    if(gameBoard[i][0] == 'o' && gameBoard[i][1] == 'o' && gameBoard[i][2] == 'o')
                     {
-                        emptySpaceCounter++;
+                        hasAIWon = true;
                     }
                 }
-            }
-            if(emptySpaceCounter == 0)
-            {
-                isItADraw = true;
-            }
+                for(int j = 0; j < 3; j++)
+                {
+                    if(gameBoard[0][j] == 'o' && gameBoard[1][j] == 'o' && gameBoard[2][j] == 'o')
+                    {
+                        hasAIWon = true;
+                    }
+                }
+                if(gameBoard[0][0] == 'o' && gameBoard[1][1] == 'o' && gameBoard[2][2] == 'o')
+                {
+                    hasAIWon = true;
+                }
+                if(gameBoard[0][0] == 'o' && gameBoard[1][1] == 'o' && gameBoard[2][2] == 'o')
+                {
+                    hasAIWon = true;
+                }
+                if(gameBoard[2][0] == 'o' && gameBoard[1][1] == 'o' && gameBoard[2][0] == 'o')
+                {
+                    hasAIWon = true;
+                }
 
+                // Counts empty spaces and determines if its a draw
+                emptySpaceCounter = 0;
+                for(int i = 0; i < 3; i++)
+                {
+                    for(int j = 0; j < 3; j++)
+                    {
+                        if(gameBoard[i][j] == '-')
+                        {
+                            emptySpaceCounter++;
+                        }
+                    }
+                }
+                if(emptySpaceCounter == 0)
+                {
+                    isItADraw = true;
+                }
+            }
         }
 
         //Print winning text

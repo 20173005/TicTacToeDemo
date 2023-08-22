@@ -6,4 +6,4 @@ Any feedback on any bugs, things to add, or alternative/easier ways to implement
 
 ## How To Use
 
-The program will take 2 numbers separated by a space. The number will the row your marker will be place and the second is the column. For example, "1 1" will place the player's market in the middle spot of the 3x3 board, and "0 1" will place it in the first row second column.
+The program will take 2 numbers separated by a space. The first number will be the row your marker is place and the second is the column. For example, "1 1" will place the player's market in the middle spot of the 3x3 board, and "0 1" will place it in the first row second column.
